@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/ucrop_height_wrapper_controls"
         android:layout_above="@+id/wrapper_states"
-        android:background="@color/ucrop_color_widget_background">
+        android:background="@color/ucrop_color_widget_background"
+        android:visibility="gone">
 
         <LinearLayout
             android:id="@+id/layout_aspect_ratio"
