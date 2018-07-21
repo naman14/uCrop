@@ -18,4 +18,5 @@
     <color name="ucrop_color_default_dimmed">#8c000000</color>
     <color name="ucrop_color_default_logo">#4f212121</color>
 
+    <color name="ucrop_color_fab">#EFC455</color>
 </resources>

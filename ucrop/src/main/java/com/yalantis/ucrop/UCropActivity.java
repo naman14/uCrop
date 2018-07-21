@@ -31,6 +31,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -106,6 +107,7 @@ public class UCropActivity extends AppCompatActivity {
     private View mBlockingView;
 
     private FloatingActionButton fabDone, fabClose;
+    private ProgressBar progressBar;
 
     private Bitmap.CompressFormat mCompressFormat = DEFAULT_COMPRESS_FORMAT;
     private int mCompressQuality = DEFAULT_COMPRESS_QUALITY;
@@ -311,6 +313,7 @@ public class UCropActivity extends AppCompatActivity {
 
         fabClose = (FloatingActionButton) findViewById(R.id.fabClose);
         fabDone = (FloatingActionButton) findViewById(R.id.fabDone);
+        progressBar=(ProgressBar) findViewById(R.id.progressbar);
 
         fabClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -323,6 +326,7 @@ public class UCropActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 cropAndSaveImage();
+                progressBar.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -657,10 +661,12 @@ public class UCropActivity extends AppCompatActivity {
                 .putExtra(UCrop.EXTRA_OUTPUT_OFFSET_X, offsetX)
                 .putExtra(UCrop.EXTRA_OUTPUT_OFFSET_Y, offsetY)
         );
+        progressBar.setVisibility(View.GONE);
     }
 
     protected void setResultError(Throwable throwable) {
         setResult(UCrop.RESULT_ERROR, new Intent().putExtra(UCrop.EXTRA_ERROR, throwable));
+        progressBar.setVisibility(View.GONE);
     }
 
 }
