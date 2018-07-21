@@ -325,8 +325,8 @@ public class UCropActivity extends AppCompatActivity {
         fabDone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                cropAndSaveImage();
                 progressBar.setVisibility(View.VISIBLE);
+                cropAndSaveImage();
             }
         });
     }
