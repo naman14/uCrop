@@ -53,8 +53,8 @@
         android:id="@+id/fabDone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ucrop_ic_done"
-        app:backgroundTint="#ffffff"
+        app:srcCompat="@drawable/ic_done_white_24dp"
+        app:backgroundTint="@color/ucrop_color_fab"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="30dp"/>
@@ -64,10 +64,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scaleType="centerInside"
-        android:src="@drawable/ucrop_ic_cross"
-        app:backgroundTint="@color/ucrop_color_toolbar"
+        app:srcCompat="@drawable/ic_close_white_24dp"
+        app:backgroundTint="@color/ucrop_color_fab"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="30dp"/>
+
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/progressbar"
+        android:visibility="gone"
+        android:layout_gravity="center" />
 
 </RelativeLayout>
